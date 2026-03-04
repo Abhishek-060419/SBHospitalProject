@@ -1,0 +1,8 @@
+# POST http://localhost:8080/patient/create 
+# Content-Type: application/json
+
+# {
+#     "pName":"Kesavan",
+#     "pAge":45,
+#     "pGender":"Male"
+# }

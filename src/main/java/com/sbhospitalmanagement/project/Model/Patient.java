@@ -1,5 +1,7 @@
 package com.sbhospitalmanagement.project.Model;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 import jakarta.annotation.Generated;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,12 +17,13 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonPropertyOrder({"pId","pName","pAge","pGender"})
 public class Patient {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long pId;
     private String pName;
     private String pGender;
-    private Integer age;
+    private Integer pAge;
 }

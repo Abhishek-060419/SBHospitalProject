@@ -9,19 +9,22 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Data
 @Entity
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonPropertyOrder({"dId","dName","dSpecialization","dAge"})
-public class Doctor {
-   
+@JsonPropertyOrder({"bId","patientId","amount","status"})
+public class Bill {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long dId;
-    private String dName;
-    private String dSpecialization;
-    private int dAge;
+    private Long bId;
+    private Long patientId;
+    private String status;
+    private Double amount;
+
 }
