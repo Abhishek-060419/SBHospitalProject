@@ -37,27 +37,27 @@ public class DoctorController {
         return doctorsService.getAllDoctors();
     }
 
-    @GetMapping("/get/dId")
+    @GetMapping("/get/{dId}")
     public ResponseEntity<Doctor> getDoctorById(@PathVariable Long dId){
         return doctorsService.getDoctorById(dId);
     }
 
-    @PutMapping("/update/dId")
+    @PutMapping("/updateName/{dId}")
     public ResponseEntity<Doctor> updateDoctorNameById(@PathVariable Long dId, @RequestBody Doctor D){
         return doctorsService.udpateDoctorNameById(dId, D);
     }
 
-    @PutMapping("/update/dId")
+    @PutMapping("/updateAge/{dId}")
     public ResponseEntity<Doctor> updateDoctorAgeById(@PathVariable Long dId, @RequestBody Doctor D){
         return doctorsService.udpateDoctorAgeById(dId, D);
     }
 
-    @PutMapping("/update/dId")
+    @PutMapping("/updateSpecialization/{dId}")
     public ResponseEntity<Doctor> updateDoctorSpecializationById(@PathVariable Long dId, @RequestBody Doctor D){
         return doctorsService.udpateDoctorSpecializationById(dId, D);
     }
 
-    @DeleteMapping("/delete/dId")
+    @DeleteMapping("/delete/{dId}")
     public void deleteDoctorById(@PathVariable Long dId){
         doctorsService.deleteDoctorById(dId);
     }
